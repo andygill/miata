@@ -3,7 +3,7 @@ CAR=MX5  # soft top
 all::
 	echo > TMP
 	make dealers CAR=MXR
-	make dealers CAR=MX5
+#	make dealers CAR=MX5
 	make render
 
 dealers::
