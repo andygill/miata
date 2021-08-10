@@ -1,5 +1,5 @@
-#CAR=MXR  # with roof
-CAR=MX5  # soft top
+CAR=MXR  # with roof
+#CAR=MX5  # soft top
 all::
 	echo > TMP
 	make dealers CAR=MXR
@@ -7,30 +7,38 @@ all::
 	make render
 
 dealers::
-	@make dealer DEALER=70623 CAR=$(CAR)  LOCATION="Lawrence"
-	@make dealer DEALER=34567 CAR=$(CAR)  LOCATION="Topeka"
-	@make dealer DEALER=34635 CAR=$(CAR)  LOCATION="Kansas City, Kansas"
-	@make dealer DEALER=34487 CAR=$(CAR)  LOCATION="Kansas City Airport"
-	@make dealer DEALER=34690 CAR=$(CAR)  LOCATION="Kansas City, MO"
-	@make dealer DEALER=70624 CAR=$(CAR)  LOCATION="Witchita"
-	@make dealer DEALER=34566 CAR=$(CAR)  LOCATION="Lincon"
-	@make dealer DEALER=61620 CAR=$(CAR)  LOCATION="Columbia"
-	@make dealer DEALER=70933 CAR=$(CAR)  LOCATION="Rolla"
-	@make dealer DEALER=34482 CAR=$(CAR)  LOCATION="BentonVille, R"
-	@make dealer DEALER=34556 CAR=$(CAR)  LOCATION="Springfield"
-	@make dealer DEALER=34245 CAR=$(CAR)  LOCATION="Tulsa, OK"
-	@make dealer DEALER=61640 CAR=$(CAR)  LOCATION="Urbandale, IA"
-	@make dealer DEALER=34710 CAR=$(CAR)  LOCATION="OMAHA, NE"
-	@make dealer DEALER=34616 CAR=$(CAR)  LOCATION="BELLEVUE, NE"
-	@make dealer DEALER=34589 CAR=$(CAR)  LOCATION="OKLAHOMA CITY, OK"
-	@make dealer DEALER=34700 CAR=$(CAR)  LOCATION="NORMAN, OK"
-	@make dealer DEALER=34706 CAR=$(CAR)  LOCATION="LAWTON, OK"
-	@make dealer DEALER=34703 CAR=$(CAR)  LOCATION="AURORA, CO"
-	@make dealer DEALER=42140 CAR=$(CAR)  LOCATION="CENTENNIAL, CO"
-	@make dealer DEALER=41320 CAR=$(CAR)  LOCATION="LITTLETON, CO"
-	@make dealer DEALER=34699 CAR=$(CAR)  LOCATION="LAKEWOOD, CO"
-	@make dealer DEALER=42025 CAR=$(CAR)  LOCATION="BROOMFIELD, CO"
-	@make dealer DEALER=42132 CAR=$(CAR)  LOCATION="LONGMONT, CO"
+	@make dealer DEALER=70623   LOCATION="Lawrence"
+	@make dealer DEALER=34567   LOCATION="Topeka"
+	@make dealer DEALER=34635   LOCATION="Kansas City, Kansas"
+	@make dealer DEALER=34487   LOCATION="Kansas City Airport"
+	@make dealer DEALER=34690   LOCATION="Kansas City, MO"
+	@make dealer DEALER=70624   LOCATION="Witchita"
+	@make dealer DEALER=34566   LOCATION="Lincon"
+	@make dealer DEALER=61620   LOCATION="Columbia"
+	@make dealer DEALER=70933   LOCATION="Rolla"
+	@make dealer DEALER=34482   LOCATION="BentonVille, R"
+	@make dealer DEALER=34556   LOCATION="Springfield"
+	@make dealer DEALER=34245   LOCATION="Tulsa, OK"
+	@make dealer DEALER=61640   LOCATION="Urbandale, IA"
+	@make dealer DEALER=34710   LOCATION="OMAHA, NE"
+	@make dealer DEALER=34616   LOCATION="BELLEVUE, NE"
+	@make dealer DEALER=34589   LOCATION="OKLAHOMA CITY, OK"
+	@make dealer DEALER=34700   LOCATION="NORMAN, OK"
+	@make dealer DEALER=34706   LOCATION="LAWTON, OK"
+	@make dealer DEALER=34703   LOCATION="AURORA, CO"
+	@make dealer DEALER=42140   LOCATION="CENTENNIAL, CO"
+	@make dealer DEALER=41320   LOCATION="LITTLETON, CO"
+	@make dealer DEALER=34699   LOCATION="LAKEWOOD, CO"
+	@make dealer DEALER=42025   LOCATION="BROOMFIELD, CO"
+	@make dealer DEALER=42132   LOCATION="LONGMONT, CO"
+	@make dealer DEALER=70927   LOCATION="ELLISVILLE, MO"
+	@make dealer DEALER=70925   LOCATION="ST. LOUIS, MO"
+	@make dealer DEALER=34581   LOCATION="ST. LOUIS, MO"
+	@make dealer DEALER=34469   LOCATION="SAINT PETERS, MO"
+	@make dealer DEALER=61554   LOCATION="SPRINGFIELD, IL"
+	@make dealer DEALER=61566   LOCATION="SIOUX CITY, IA"
+	@make dealer DEALER=34541   LOCATION="DODGE CITY, KS"
+	@make dealer DEALER=70151   LOCATION="OFALLON, IL"
 
 dealer::
 	@curl -X POST -s \

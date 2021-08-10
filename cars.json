@@ -118,5 +118,20 @@
     "Availability": "0",
     "Status": "11",
     "Location": "LITTLETON, CO"
+  },
+  {
+    "Price": "34640",
+    "Color": "GRAY",
+    "DealerId": 34581,
+    "DealerName": "BOMMARITO MAZDA SOUTH",
+    "Mileage": 0,
+    "Model": "2021 MX-5 Miata RF",
+    "Trans": "Automatic",
+    "TrimName": "Club",
+    "Year": "2021",
+    "Vin": "JM1NDAL74M0455576",
+    "Availability": "0",
+    "Status": "11",
+    "Location": "ST. LOUIS, MO"
   }
 ]
