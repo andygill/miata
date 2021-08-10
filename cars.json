@@ -1,20 +1,5 @@
 [
   {
-    "Price": "24623",
-    "Color": "WHITE",
-    "DealerId": 34482,
-    "DealerName": "SUPERIOR MAZDA",
-    "Mileage": 52154,
-    "Model": "2017 MX-5 Miata RF",
-    "Trans": "Automatic",
-    "TrimName": "Grand Touring",
-    "Year": "2017",
-    "Vin": "JM1NDAM74H0103554",
-    "Availability": "0",
-    "Status": "  ",
-    "Location": "BentonVille, R"
-  },
-  {
     "Price": "36955",
     "Color": "GRAY",
     "DealerId": 34482,
@@ -88,21 +73,6 @@
     "Availability": "0",
     "Status": "10",
     "Location": "OKLAHOMA CITY, OK"
-  },
-  {
-    "Price": "37795",
-    "Color": "BLACK",
-    "DealerId": 34700,
-    "DealerName": "NELSON MAZDA NORMAN",
-    "Mileage": 0,
-    "Model": "2021 MX-5 Miata RF",
-    "Trans": "Automatic",
-    "TrimName": "Grand Touring",
-    "Year": "2021",
-    "Vin": "JM1NDAM70M0455282",
-    "Availability": "0",
-    "Status": "10",
-    "Location": "NORMAN, OK"
   },
   {
     "Price": "36705",
