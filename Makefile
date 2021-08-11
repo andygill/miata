@@ -5,6 +5,7 @@ all::
 	make dealers CAR=MXR
 #	make dealers CAR=MX5
 	make render
+	git diff
 
 dealers::
 	@make dealer DEALER=70623   LOCATION="Lawrence"
@@ -50,7 +51,8 @@ dealer::
 
 render::
 	jq flatten -s TMP > cars.json
-	jq --color-output flatten -s TMP
+	jq --color-output . cars.json
+
 
 
 
