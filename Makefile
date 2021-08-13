@@ -8,16 +8,16 @@ all::
 	git diff
 
 dealers::
-	@make dealer DEALER=70623   LOCATION="Lawrence"
-	@make dealer DEALER=34567   LOCATION="Topeka"
-	@make dealer DEALER=34635   LOCATION="Kansas City, Kansas"
-	@make dealer DEALER=34487   LOCATION="Kansas City Airport"
-	@make dealer DEALER=34690   LOCATION="Kansas City, MO"
-	@make dealer DEALER=70624   LOCATION="Witchita"
+	@make dealer DEALER=70623   LOCATION="Lawrence"			DIST=0
+	@make dealer DEALER=34567   LOCATION="Topeka"			DIST=1
+	@make dealer DEALER=34635   LOCATION="Kansas City, Kansas"	DIST=40
+	@make dealer DEALER=34690   LOCATION="Kansas City, MO"		DIST=45
+	@make dealer DEALER=34487   LOCATION="Kansas City Airport"	DIST=55
+	@make dealer DEALER=70624   LOCATION="Witchita"			
 	@make dealer DEALER=34566   LOCATION="Lincon"
 	@make dealer DEALER=61620   LOCATION="Columbia"
 	@make dealer DEALER=70933   LOCATION="Rolla"
-	@make dealer DEALER=34482   LOCATION="BentonVille, R"
+	@make dealer DEALER=34482   LOCATION="BentonVille, AR"
 	@make dealer DEALER=34556   LOCATION="Springfield"
 	@make dealer DEALER=34245   LOCATION="Tulsa, OK"
 	@make dealer DEALER=61640   LOCATION="Urbandale, IA"
@@ -40,6 +40,10 @@ dealers::
 	@make dealer DEALER=61566   LOCATION="SIOUX CITY, IA"
 	@make dealer DEALER=34541   LOCATION="DODGE CITY, KS"
 	@make dealer DEALER=70151   LOCATION="OFALLON, IL"
+	@make dealer DEALER=10707   LOCATION="SIOUX FALLS, SD"
+	@make dealer DEALER=34428   LOCATION="WICHITA FALLS, TX"
+	@make dealer DEALER=34622   LOCATION="DENTON, TX"
+
 
 dealer::
 	@curl -X POST -s \
