@@ -13,6 +13,7 @@ dealers::
 	@make dealer DEALER=34635   LOCATION="Kansas City, Kansas"	DIST=40
 	@make dealer DEALER=34690   LOCATION="Kansas City, MO"		DIST=45
 	@make dealer DEALER=34487   LOCATION="Kansas City Airport"	DIST=55
+	@make dealer DEALER=34693   LOCATION="LEES SUMMIT, MO"		DIST=55
 	@make dealer DEALER=70624   LOCATION="Witchita"			
 	@make dealer DEALER=34566   LOCATION="Lincon"
 	@make dealer DEALER=61620   LOCATION="Columbia"
@@ -43,7 +44,11 @@ dealers::
 	@make dealer DEALER=10707   LOCATION="SIOUX FALLS, SD"
 	@make dealer DEALER=34428   LOCATION="WICHITA FALLS, TX"
 	@make dealer DEALER=34622   LOCATION="DENTON, TX"
-
+	@make dealer DEALER=34615   LOCATION="CAPE GIRARDEAU, MO"
+	@make dealer DEALER=34439   LOCATION="WEST BURLINGTON, IA"
+	@make dealer DEALER=61601   LOCATION="PEORIA, IL"
+	@make dealer DEALER=61523   LOCATION="BLOOMINGTON, IL"
+	@make dealer DEALER=61618   LOCATION="URBANA, IL"
 
 dealer::
 	@curl -X POST -s \
