@@ -103,5 +103,35 @@
     "Availability": "0",
     "Status": "11",
     "Location": "ST. LOUIS, MO"
+  },
+  {
+    "Price": "30590",
+    "Color": "RED",
+    "DealerId": 34622,
+    "DealerName": "CLASSIC MAZDA",
+    "Mileage": 14021,
+    "Model": "2019 MX-5 Miata RF",
+    "Trans": "Automatic",
+    "TrimName": "Grand Touring",
+    "Year": "2019",
+    "Vin": "JM1NDAM76K0303097",
+    "Availability": "0",
+    "Status": "  ",
+    "Location": "DENTON, TX"
+  },
+  {
+    "Price": "36160",
+    "Color": "GRAY",
+    "DealerId": 34622,
+    "DealerName": "CLASSIC MAZDA",
+    "Mileage": 0,
+    "Model": "2021 MX-5 Miata RF",
+    "Trans": "Automatic",
+    "TrimName": "Grand Touring",
+    "Year": "2021",
+    "Vin": "JM1NDAM75M0459828",
+    "Availability": "0",
+    "Status": "10",
+    "Location": "DENTON, TX"
   }
 ]
