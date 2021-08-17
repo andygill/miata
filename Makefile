@@ -1,5 +1,6 @@
 CAR=MXR  # with roof
 #CAR=MX5  # soft top
+ZIP=66047
 all::
 	make clean
 	make dealers CAR=MXR
@@ -9,6 +10,7 @@ all::
 
 clean::
 	rm -f TMP
+	rm -Rf *-cars.json
 
 dealers::
 	make dealer DEALER=70623   LOCATION="Lawrence"			DIST=0	ZIP=66047
@@ -28,11 +30,11 @@ dealers::
 	make dealer DEALER=34245   LOCATION="Tulsa, OK"		DIST=  	ZIP=75133
 	make dealer DEALER=70933   LOCATION="Rolla, MO"		DIST=	ZIP=65584
 	make dealer DEALER=61640   LOCATION="Urbandale, IA"		DIST=	ZIP=50322
-	make dealer DEALER=34482   LOCATION="BentonVille, AR"		DIST=	ZIP=
+	make dealer DEALER=34482   LOCATION="BentonVille, AR"		DIST=	ZIP=72712
 	make dealer DEALER=34589   LOCATION="OKLAHOMA CITY, OK"
 	make dealer DEALER=34700   LOCATION="NORMAN, OK"
 	make dealer DEALER=34706   LOCATION="LAWTON, OK"
-	make dealer DEALER=34703   LOCATION="AURORA, CO"
+	make dealer DEALER=34703   LOCATION="AURORA, CO"			ZIP=80100
 	make dealer DEALER=42140   LOCATION="CENTENNIAL, CO"
 	make dealer DEALER=41320   LOCATION="LITTLETON, CO"
 	make dealer DEALER=34699   LOCATION="LAKEWOOD, CO"
@@ -56,11 +58,17 @@ dealers::
 	make dealer DEALER=61618   LOCATION="URBANA, IL"
 
 
+tesXt::
+	@echo 'ResultsPageSize=12&Vehicle%5BDealerId%5D%5B%5D=$(DEALER)&Vehicle%5BCarline%5D%5B%5D=$(CAR)&Vehicle%5BType%5D%5B%5D=n'
+	@echo 'ResultsPageSize=12&Vehicle%5BDealerId%5D%5B%5D=70623&Vehicle%5BCarline%5D%5B%5D=MXR&Vehicle%5BType%5D%5B%5D=n'
+
 test::
 	@curl -X POST -s \
 		https://www.mazdausa.com/api/inventorysearch \
 		-H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' \
-		-d 'ResultsPageSize=12&Vehicle%5BDealerId%5D%5B%5D=$(DEALER)&Vehicle%5BCarline%5D%5B%5D=$(CAR)&Vehicle%5BType%5D%5B%5D=n'
+		-d 'ResultsPageSize=12&Vehicle%5BDealerId%5D%5B%5D=34482Vehicle%5BCarline%5D%5B%5D=MXR&Vehicle%5BType%5D%5B%5D=n'
+#		-d 'ResultsPageSize=12&Vehicle%5BDealerId%5D%5B%5D=$(DEALER)&Vehicle%5BCarline%5D%5B%5D=$(CAR)&Vehicle%5BType%5D%5B%5D=n'
+
 
 
 dealer::
@@ -79,9 +87,37 @@ render::
 
 
 
-
+bigsearch::
+	make search ZIP=66047
+	make search ZIP=72712
 
 search::
-	curl -s 'https://www.mazdausa.com/handlers/dealer.ajax?zip=66047&maxDistance=300' | \
-		jq -C ".body.results|map({id,city,driveDistMi,zip})"
+	curl -s 'https://www.mazdausa.com/handlers/dealer.ajax?zip=$(ZIP)&maxDistance=250' | \
+		jq '.body.results|map("ResultsPageSize=12&Vehicle%5BDealerId%5D%5B%5D=" + (.id|tostring) + "&Vehicle%5BCarline%5D%5B%5D=MXR&Vehicle%5BType%5D%5B%5D=n")' | \
+	grep , | \
+	sed 's/[\" ,]//g' | \
+	xargs -n 1 -t curl -X POST -s \
+		https://www.mazdausa.com/api/inventorysearch \
+		-H "'Content-Type: application/x-www-form-urlencoded; charset=UTF-8'" \
+		-d | \
+	 jq '.response.Vehicles|map(select(.Model.Transmission.Desc == "Automatic"))|[.[]|{Price, Color:.Colors.MajorExteriorColor, DealerId, DealerName, Mileage, Model:.Model.Name, Trans:.Model.Transmission.Desc, TrimName:.Model.TrimName, Year:.Model.Year, Vin, Availability, Status}]'  > TMP
+	jq flatten -s TMP > $(ZIP)-cars.json
+	jq --color-output . $(ZIP)-cars.json
+
+#| \
+#	  jq -s 'map(response.Vehicles|map(select(.Model.Transmission.Desc == "Automatic"))|[.[]|{Price, Color:.Colors.MajorExteriorColor, DealerId, DealerName, Mileage, Model:.Model.Name, Trans:.Model.Transmission.Desc, TrimName:.Model.TrimName, Year:.Model.Year, Vin, Availability, Status}])' 
+
+
+foo::
+	echo 'ResultsPageSize=12&Vehicle%5BDealerId%5D%5B%5D=70623&Vehicle%5BCarline%5D%5B%5D=MXR&Vehicle%5BType%5D%5B%5D=n' | \
+		xargs -n 1 curl -X POST -s \
+		https://www.mazdausa.com/api/inventorysearch \
+		-H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' \
+		-d
+# ResultsPageSize=12&Vehicle%5BDealerId%5D%5B%5D=$(DEALER)&Vehicle%5BCarline%5D%5B%5D=$(CAR)&Vehicle%5BType%5D%5B%5D=n' |  \
+
+
+
+
+# {id,city,driveDistMi,zip})"
 
