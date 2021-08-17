@@ -8,22 +8,25 @@ all::
 	git diff
 
 dealers::
-	@make dealer DEALER=70623   LOCATION="Lawrence"			DIST=0
-	@make dealer DEALER=34567   LOCATION="Topeka"			DIST=1
-	@make dealer DEALER=34635   LOCATION="Kansas City, Kansas"	DIST=40
-	@make dealer DEALER=34690   LOCATION="Kansas City, MO"		DIST=45
-	@make dealer DEALER=34487   LOCATION="Kansas City Airport"	DIST=55
-	@make dealer DEALER=34693   LOCATION="LEES SUMMIT, MO"		DIST=55
-	@make dealer DEALER=70624   LOCATION="Witchita"			
-	@make dealer DEALER=34566   LOCATION="Lincon"
-	@make dealer DEALER=61620   LOCATION="Columbia"
-	@make dealer DEALER=70933   LOCATION="Rolla"
-	@make dealer DEALER=34482   LOCATION="BentonVille, AR"
-	@make dealer DEALER=34556   LOCATION="Springfield"
-	@make dealer DEALER=34245   LOCATION="Tulsa, OK"
-	@make dealer DEALER=61640   LOCATION="Urbandale, IA"
-	@make dealer DEALER=34710   LOCATION="OMAHA, NE"
-	@make dealer DEALER=34616   LOCATION="BELLEVUE, NE"
+	@make dealer DEALER=70623   LOCATION="Lawrence"			DIST=0	ZIP=66047
+	@make dealer DEALER=34567   LOCATION="Topeka"			DIST=1	ZIP=66611
+	@make dealer DEALER=34635   LOCATION="Kansas City, Kansas"	DIST=40	ZIP=66061
+	@make dealer DEALER=34690   LOCATION="Kansas City, MO"		DIST=45	ZIP=64145
+	@make dealer DEALER=34693   LOCATION="LEES SUMMIT, MO"		DIST=55	ZIP=64081
+	@make dealer DEALER=34487   LOCATION="Kansas City Airport"	DIST=55	ZIP=64118
+	@make dealer DEALER=70624   LOCATION="Witchita"			DIST=	ZIP=67207
+	@make dealer DEALER=61620   LOCATION="Columbia"			DIST=	ZIP=65202
+	@make dealer DEALER=34616   LOCATION="BELLEVUE, NE"		DIST=	ZIP=68005
+	@make dealer DEALER=34710   LOCATION="OMAHA, NE"		DIST=	ZIP=68138
+	@make dealer DEALER=34566   LOCATION="Lincoln"			DIST=	ZIP=68521
+	@make dealer DEALER=34556   LOCATION="Springfield, MO"		DIST=	ZIP=65802
+	@make dealer DEALER=71012   LOCATION="Freemont, NE"		DIST=   ZIP=68025
+	@make dealer DEALER=34245   LOCATION="Tulsa, OK"		DIST=  	ZIP=75133
+
+	@make dealer DEALER=70933   LOCATION="Rolla, MO"		DIST=	ZIP=65584
+	@make dealer DEALER=61640   LOCATION="Urbandale, IA"		DIST=	ZIP=50322
+
+	@make dealer DEALER=34482   LOCATION="BentonVille, AR"		DIST=	ZIP=
 	@make dealer DEALER=34589   LOCATION="OKLAHOMA CITY, OK"
 	@make dealer DEALER=34700   LOCATION="NORMAN, OK"
 	@make dealer DEALER=34706   LOCATION="LAWTON, OK"
