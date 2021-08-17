@@ -34,7 +34,7 @@ dealers::
 	make dealer DEALER=34589   LOCATION="OKLAHOMA CITY, OK"
 	make dealer DEALER=34700   LOCATION="NORMAN, OK"
 	make dealer DEALER=34706   LOCATION="LAWTON, OK"
-	make dealer DEALER=34703   LOCATION="AURORA, CO"			ZIP=80100
+	make dealer DEALER=34703   LOCATION="AURORA, CO"			ZIP=80010
 	make dealer DEALER=42140   LOCATION="CENTENNIAL, CO"
 	make dealer DEALER=41320   LOCATION="LITTLETON, CO"
 	make dealer DEALER=34699   LOCATION="LAKEWOOD, CO"
@@ -90,6 +90,7 @@ render::
 bigsearch::
 	make search ZIP=66047
 	make search ZIP=72712
+	make search ZIP=80010
 
 search::
 	curl -s 'https://www.mazdausa.com/handlers/dealer.ajax?zip=$(ZIP)&maxDistance=250' | \
