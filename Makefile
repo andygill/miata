@@ -53,6 +53,14 @@ dealers::
 	@make dealer DEALER=61523   LOCATION="BLOOMINGTON, IL"
 	@make dealer DEALER=61618   LOCATION="URBANA, IL"
 
+
+test::
+	@curl -X POST -s \
+		https://www.mazdausa.com/api/inventorysearch \
+		-H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' \
+		-d 'ResultsPageSize=12&Vehicle%5BDealerId%5D%5B%5D=$(DEALER)&Vehicle%5BCarline%5D%5B%5D=$(CAR)&Vehicle%5BType%5D%5B%5D=n'
+
+
 dealer::
 	@curl -X POST -s \
 		https://www.mazdausa.com/api/inventorysearch \
@@ -69,5 +77,7 @@ render::
 
 
 
-
+search::
+	curl -s 'https://www.mazdausa.com/handlers/dealer.ajax?zip=66047&maxDistance=300' | \
+		jq -C ".body.results|map({id,city,driveDistMi,zip})"
 
