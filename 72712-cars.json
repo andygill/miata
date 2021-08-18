@@ -56,6 +56,20 @@
     "Status": "10"
   },
   {
+    "Price": "36460",
+    "Color": "GRAY",
+    "DealerId": 34589,
+    "DealerName": "BOB MOORE MAZDA",
+    "Mileage": 0,
+    "Model": "2021 MX-5 Miata RF",
+    "Trans": "Automatic",
+    "TrimName": "Grand Touring",
+    "Year": "2021",
+    "Vin": "JM1NDAM77M0460124",
+    "Availability": "0",
+    "Status": "09"
+  },
+  {
     "Price": "36755",
     "Color": "RED",
     "DealerId": 34692,
