@@ -86,11 +86,18 @@ render::
 	jq --color-output . cars.json
 
 
+TRANS=Automatic
+#TRANS=Manual
 
 bigsearch::
 	make search ZIP=66047
-	make search ZIP=72712
-	make search ZIP=80010
+	make search ZIP=72712	# AR
+	make search ZIP=80010	# Denver
+	make search ZIP=63101   # St Louis
+
+smallsearch::
+	make search ZIP=66047 TRANS=Manual
+
 
 search::
 	curl -s 'https://www.mazdausa.com/handlers/dealer.ajax?zip=$(ZIP)&maxDistance=250' | \
@@ -101,9 +108,9 @@ search::
 		https://www.mazdausa.com/api/inventorysearch \
 		-H "'Content-Type: application/x-www-form-urlencoded; charset=UTF-8'" \
 		-d | \
-	 jq '.response.Vehicles|map(select(.Model.Transmission.Desc == "Automatic"))|[.[]|{Price, Color:.Colors.MajorExteriorColor, DealerId, DealerName, Mileage, Model:.Model.Name, Trans:.Model.Transmission.Desc, TrimName:.Model.TrimName, Year:.Model.Year, Vin, Availability, Status}]'  > TMP
-	jq flatten -s TMP > $(ZIP)-cars.json
-	jq --color-output . $(ZIP)-cars.json
+	 jq '.response.Vehicles|map(select(.Model.Transmission.Desc == "$(TRANS)"))|[.[]|{Price, Color:.Colors.MajorExteriorColor, DealerId, DealerName, Mileage, Model:.Model.Name, Trans:.Model.Transmission.Desc, TrimName:.Model.TrimName, Year:.Model.Year, Vin, Availability, Status}]'  > TMP
+	jq flatten -s TMP > $(ZIP)-$(TRANS)-cars.json
+	jq --color-output . $(ZIP)-$(TRANS)-cars.json
 
 #| \
 #	  jq -s 'map(response.Vehicles|map(select(.Model.Transmission.Desc == "Automatic"))|[.[]|{Price, Color:.Colors.MajorExteriorColor, DealerId, DealerName, Mileage, Model:.Model.Name, Trans:.Model.Transmission.Desc, TrimName:.Model.TrimName, Year:.Model.Year, Vin, Availability, Status}])' 

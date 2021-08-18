@@ -1,0 +1,30 @@
+[
+  {
+    "Price": "34640",
+    "Color": "GRAY",
+    "DealerId": 34581,
+    "DealerName": "BOMMARITO MAZDA SOUTH",
+    "Mileage": 0,
+    "Model": "2021 MX-5 Miata RF",
+    "Trans": "Automatic",
+    "TrimName": "Club",
+    "Year": "2021",
+    "Vin": "JM1NDAL74M0455576",
+    "Availability": "0",
+    "Status": "11"
+  },
+  {
+    "Price": "36395",
+    "Color": "BLUE",
+    "DealerId": 34602,
+    "DealerName": "PADUCAH MAZDA",
+    "Mileage": 0,
+    "Model": "2021 MX-5 Miata RF",
+    "Trans": "Automatic",
+    "TrimName": "Grand Touring",
+    "Year": "2021",
+    "Vin": "JM1NDAM73M0455339",
+    "Availability": "0",
+    "Status": "11"
+  }
+]
