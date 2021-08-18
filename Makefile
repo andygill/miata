@@ -90,10 +90,12 @@ TRANS=Automatic
 #TRANS=Manual
 
 bigsearch::
-	make search ZIP=66047
+	make search ZIP=66047   # home
 	make search ZIP=72712	# AR
 	make search ZIP=80010	# Denver
 	make search ZIP=63101   # St Louis
+	make search ZIP=68005   # Omaha
+
 
 smallsearch::
 	make search ZIP=66047 TRANS=Manual
