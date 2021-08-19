@@ -2,6 +2,11 @@ CAR=MXR  # with roof
 #CAR=MX5  # soft top
 ZIP=66047
 all::
+	make bigsearch
+
+
+more::
+
 	make clean
 	make dealers CAR=MXR
 #	make dealers CAR=MX5
